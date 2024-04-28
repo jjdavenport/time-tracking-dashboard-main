@@ -70,6 +70,15 @@ main {
   font-size: 0.6875rem;
 }
 
+.header button {
+  border: none;
+  background: none;
+}
+
+.button-active {
+  color: white;
+}
+
 .work,
 .play,
 .study,
@@ -81,12 +90,12 @@ main {
   flex: 1;
   color: white;
   border-radius: 1rem;
-  overflow: hidden;
 }
 
 .lower {
   height: 70%;
   background-color: var(--lower-div-background-color);
+  border-radius: 1rem;
 }
 
 .work {
