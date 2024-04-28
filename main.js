@@ -78,3 +78,44 @@ monthlyBtn.addEventListener("click", () => {
     monthly.classList.remove("hide");
   });
 });
+
+fetch("/data.json")
+  .then((request) => {
+    if (!request.ok) {
+      console.log("Oops! Something went wrong.");
+      return null;
+    }
+    return request.json();
+  })
+  .then((data) => {
+    const workData = data[0];
+    const workTitle = document.querySelectorAll(".workTitle");
+    workTitle.forEach((workTitle) => {
+      workTitle.textContent = workData.title;
+    });
+    const playData = data[1];
+    const playTitle = document.querySelectorAll(".playTitle");
+    playTitle.forEach((playTitle) => {
+      playTitle.textContent = playData.title;
+    });
+    const studyData = data[2];
+    const studyTitle = document.querySelectorAll(".studyTitle");
+    studyTitle.forEach((studyTitle) => {
+      studyTitle.textContent = studyData.title;
+    });
+    const exerciseData = data[3];
+    const exerciseTitle = document.querySelectorAll(".exerciseTitle");
+    exerciseTitle.forEach((exerciseTitle) => {
+      exerciseTitle.textContent = exerciseData.title;
+    });
+    const socialData = data[4];
+    const socialTitle = document.querySelectorAll(".socialTitle");
+    socialTitle.forEach((socialTitle) => {
+      socialTitle.textContent = socialData.title;
+    });
+    const selfCareData = data[5];
+    const selfCareTitle = document.querySelectorAll(".self-care-title");
+    selfCareTitle.forEach((selfCareTitle) => {
+      selfCareTitle.textContent = selfCareData.title;
+    });
+  });
