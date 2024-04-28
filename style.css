@@ -7,6 +7,7 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   height: 100vh;
+  background-color: var(--background-color);
 }
 
 * {
@@ -14,10 +15,19 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  font-size: 1.125rem;
 }
 
 :root {
   --background-color: hsl(226, 43%, 10%);
+  --h1-background-color: hsl(246, 80%, 60%);
+  --lower-div-background-color: hsl(235, 46%, 20%);
+  --work-background-color: hsl(15, 100%, 70%);
+  --play-background-color: hsl(195, 74%, 62%);
+  --study-background-color: hsl(348, 100%, 68%);
+  --exercise-background-color: hsl(145, 58%, 55%);
+  --social-background-color: hsl(264, 64%, 52%);
+  --self-care-background-color: hsl(43, 84%, 65%);
 }
 
 main {
@@ -29,8 +39,78 @@ main {
   justify-content: space-between;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: var(--lower-div-background-color);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.h1 {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--h1-background-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+.header img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.header h1 {
+  display: flex;
+}
+
+.header h1 span {
+  font-size: 0.6875rem;
+}
+
 .work,
+.play,
+.study,
+.exercise,
+.social,
+.self-care {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.lower {
+  height: 70%;
+  background-color: var(--lower-div-background-color);
+}
+
 .work {
+  background-color: var(--work-background-color);
+}
+
+.play {
+  background-color: var(--play-background-color);
+}
+
+.study {
+  background-color: var(--study-background-color);
+}
+
+.exercise {
+  background-color: var(--exercise-background-color);
+}
+
+.social {
+  background-color: var(--social-background-color);
+}
+
+.self-care {
+  background-color: var(--self-care-background-color);
 }
 
 .daily,
@@ -44,4 +124,26 @@ main {
 
 .hide {
   display: none;
+}
+
+@media screen and (width >= 23.4375rem) {
+  body {
+    place-items: center;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .header {
+    grid-row: 1 / 3;
+    grid-column: 1 / 1;
+  }
+  .header h1 {
+    flex-direction: column;
+  }
+  .header ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
