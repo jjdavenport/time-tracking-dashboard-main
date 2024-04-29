@@ -30,6 +30,7 @@ body {
   --social-background-color: hsl(264, 64%, 52%);
   --self-care-background-color: hsl(43, 84%, 65%);
   --main-font-color: hsl(236, 100%, 87%);
+  --lower-hover-background-color: hsl(235, 45%, 61%);
 }
 
 main {
@@ -129,6 +130,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.lower:hover {
+  cursor: pointer;
+  background-color: var(--lower-hover-background-color);
 }
 
 .lower svg:hover {
