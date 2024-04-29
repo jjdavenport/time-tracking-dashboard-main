@@ -81,10 +81,16 @@ main {
 .header button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .button-active {
   color: white;
+}
+
+.header button:hover {
+  color: white;
+  cursor: pointer;
 }
 
 .work,
