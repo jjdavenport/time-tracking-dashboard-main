@@ -233,7 +233,7 @@ main {
   display: none;
 }
 
-@media screen and (width >= 35rem) {
+@media screen and (width > 35rem) {
   body {
     place-items: center;
   }
